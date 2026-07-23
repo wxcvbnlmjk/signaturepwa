@@ -25,6 +25,10 @@ export default defineConfig({
         { src: '/icons/icon-512.svg', sizes: '512x512', type: 'image/svg+xml', purpose: 'any maskable' },
       ],
     },
-    workbox: { navigateFallback: '/index.html', globPatterns: ['**/*.{js,css,html,svg,png,woff2}'] },
+    workbox: {
+      navigateFallback: '/index.html',
+      globPatterns: ['**/*.{js,css,html,svg,png,woff2,mjs}'],
+      cleanupOutdatedCaches: true,
+    },
   })],
 })
